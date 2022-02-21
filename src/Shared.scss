@@ -1,0 +1,54 @@
+// Colors
+//==================================================
+
+$background-color: #eaeaea;
+$main: rgb(123, 91, 199);
+$secondary: rgb(234, 56, 141);
+$white: #f8fafc;
+
+$box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+$transistion-ease: all 0.5s ease-in-out;
+
+//================================================
+// Placeholders
+//================================================
+%button {
+  border-radius: 5px;
+  color: $white;
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding: 0.25rem 0.5rem;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+%flex-align {
+  display: flex;
+  align-items: center;
+}
+
+%flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+%flex-center {
+  @extend %flex-align;
+  justify-content: center;
+}
+
+%flex-column {
+  @extend %flex-align;
+  flex-direction: column;
+}
+
+//================================================
+// Mixin
+//================================================
+
+@mixin button($color) {
+  background: $color;
+  border-color: $color;
+}

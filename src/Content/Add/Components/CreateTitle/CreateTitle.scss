@@ -1,0 +1,93 @@
+@import "./../../../../Shared.scss";
+
+.card-title-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20%;
+  margin: 0 auto;
+  min-height: 60vh;
+  height: 100%;
+  width: 60%;
+  // word-break: break-all;
+}
+
+.card-title-input {
+  background: white;
+  border-radius: 5px;
+  box-shadow: $box-shadow;
+  @extend %flex-between;
+  flex-direction: column;
+  padding: 2rem 1rem;
+}
+
+.input-container {
+  .input-container {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+
+    p {
+      color: $main;
+      font-weight: 500;
+      padding-bottom: 0.75rem;
+    }
+
+    input {
+      color: $secondary;
+      font-size: 1.25rem;
+      border: none;
+      background: $background-color;
+      border-radius: 5px;
+      padding: 0.25rem 0.5rem;
+
+      &:focus {
+        box-shadow: 0 0 10px #719ece;
+        outline: none;
+      }
+    }
+  }
+}
+
+.input-container-bttns {
+  @extend %flex-between;
+
+  button {
+    @extend %button;
+    width: 60%;
+  }
+  .input-container-bttn-left {
+    @include button($secondary);
+  }
+  .input-container-bttn-right {
+    @include button($main);
+  }
+}
+
+.card-title-display {
+  background: linear-gradient(to bottom right, $main -50%, $secondary 100%);
+  border-radius: 5px;
+  box-shadow: $box-shadow;
+  color: $white;
+  @extend %flex-column;
+
+  h1 {
+    background-color: white;
+    color: $main;
+    margin-block: 5rem 3rem;
+    padding-block: 0.5rem;
+    width: 100%;
+    text-align: center;
+  }
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    width: 80%;
+  }
+  h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    width: 80%;
+  }
+}

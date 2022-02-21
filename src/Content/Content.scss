@@ -1,0 +1,8 @@
+@import "./../Shared.scss";
+
+main {
+  background: $background-color;
+  width: calc(100% - 4rem);
+  height: 100%;
+  min-height: 100vh;
+}

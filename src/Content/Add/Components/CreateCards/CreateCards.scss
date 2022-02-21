@@ -1,0 +1,75 @@
+@import "./../../../../Shared.scss";
+
+.card-add-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20%;
+  margin: 0 auto;
+  min-height: 60vh;
+  height: 100%;
+  width: 60%;
+
+  .add-card-left {
+    background: white;
+    border-radius: 5px;
+    box-shadow: $box-shadow;
+    @extend %flex-between;
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+}
+
+.input-add-card-container {
+  .input-add-card {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+
+    p {
+      color: $main;
+      font-weight: 500;
+      padding-bottom: 0.75rem;
+    }
+
+    textarea {
+      color: $secondary;
+      font-size: 1rem;
+      border: none;
+      background: $background-color;
+      border-radius: 5px;
+      padding: 0.5rem 0.75rem;
+      max-height: 15vh;
+      max-width: 21vw;
+
+      &:focus {
+        box-shadow: 0 0 10px #719ece;
+        outline: none;
+      }
+    }
+  }
+}
+
+.add-card-bttns {
+  @extend %flex-between;
+
+  button {
+    @extend %button;
+    width: 30%;
+  }
+  .add-card-bttn-left {
+    @include button($secondary);
+  }
+  .add-card-bttn-right {
+    @include button($main);
+  }
+}
+
+.add-card-right {
+  background: linear-gradient(to bottom right, $main -50%, $secondary 100%);
+  border-radius: 5px;
+  box-shadow: $box-shadow;
+  color: $white;
+  @extend %flex-column;
+  padding: 2rem 1rem;
+}

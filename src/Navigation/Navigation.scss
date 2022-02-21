@@ -1,0 +1,74 @@
+@import "./../Shared.scss";
+
+.navigation {
+  background: linear-gradient($main 0%, $secondary 100%);
+  box-shadow: $box-shadow;
+  color: white;
+  position: fixed;
+  height: 100%;
+  @extend %flex-column;
+  justify-content: space-between;
+  transition: $transistion-ease;
+
+  div {
+    @extend %flex-center;
+    width: 100%;
+
+    h2 {
+      transition: $transistion-ease;
+      font-size: 0vw;
+      opacity: 0;
+    }
+  }
+  .expand-container {
+    @extend %flex-align;
+    justify-content: flex-start;
+    padding-inline: 1rem;
+    h2 {
+      font-size: clamp(1.25rem, 1.25vw, 1.25vw);
+      padding-left: 1.5rem;
+      opacity: 1;
+    }
+    .main-logo-name {
+      font-style: italic;
+      padding-left: 1rem;
+    }
+  }
+}
+
+.nav-main {
+  @extend %flex-column;
+}
+
+.main-logo {
+  padding-block: 1rem;
+
+  h1 {
+    background: linear-gradient(
+      to bottom right,
+      rgb(255, 61, 99) 30%,
+      rgb(248, 139, 75) 100%
+    );
+    border-radius: 4px;
+    font-size: clamp(1.75rem, 1.75vw, 1.75vw);
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+.nav-icon {
+  cursor: pointer;
+  font-size: 1.75rem;
+  font-size: clamp(1.5rem, 1.5vw, 1.5vw);
+  padding-block: 1rem;
+  width: 100%;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+}
+
+.bottom-icon {
+  &:hover {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
