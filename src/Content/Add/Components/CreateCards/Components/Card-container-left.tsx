@@ -3,9 +3,11 @@ import React from "react"
 const CardContainerLeft = ({
   inputData,
   changeInputData,
+  addCard,
 }: {
   inputData: any
   changeInputData: any
+  addCard: any
 }) => {
   return (
     <div className="add-card-left">
@@ -36,7 +38,9 @@ const CardContainerLeft = ({
       <div>
         <div className="add-card-bttns">
           <button className="add-card-bttn-left">Back</button>
-          <button className="add-card-bttn-right">Add</button>
+          <button className="add-card-bttn-right" onClick={() => addCard()}>
+            Add
+          </button>
         </div>
       </div>
     </div>
