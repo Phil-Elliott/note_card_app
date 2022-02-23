@@ -1,13 +1,23 @@
 import React from "react"
 
 const CardContainerLeft = ({
+  cards,
   inputData,
   changeInputData,
+  deleteCard,
+  refreshCard,
   addCard,
+  cardNumber,
+  updateCard,
 }: {
+  cards: any
   inputData: any
   changeInputData: any
+  deleteCard: any
+  refreshCard: any
   addCard: any
+  cardNumber: number
+  updateCard: any
 }) => {
   return (
     <div className="add-card-left">
@@ -36,12 +46,31 @@ const CardContainerLeft = ({
         </div>
       </div>
       <div>
-        <div className="add-card-bttns">
-          <button className="add-card-bttn-left">Back</button>
-          <button className="add-card-bttn-right" onClick={() => addCard()}>
-            Add
-          </button>
-        </div>
+        {cardNumber <= cards.length ? (
+          <div className="add-card-bttns">
+            <button className="add-card-bttn-left" onClick={() => deleteCard()}>
+              Delete
+            </button>
+            <button
+              className="add-card-bttn-right"
+              onClick={() => updateCard()}
+            >
+              Update
+            </button>
+          </div>
+        ) : (
+          <div className="add-card-bttns">
+            <button
+              className="add-card-bttn-left"
+              onClick={() => refreshCard()}
+            >
+              Refresh
+            </button>
+            <button className="add-card-bttn-right" onClick={() => addCard()}>
+              Add
+            </button>
+          </div>
+        )}
       </div>
     </div>
   )
