@@ -1,5 +1,11 @@
 @import "./../../../../Shared.scss";
 
+.card-title-main-container {
+  display: flex;
+  align-items: center;
+  width: 70%;
+}
+
 .card-title-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -7,8 +13,17 @@
   margin: 0 auto;
   min-height: 60vh;
   height: 100%;
-  width: 60%;
-  // word-break: break-all;
+  width: 80%;
+}
+
+.create-title-icon-left {
+  color: $secondary;
+  font-size: 2rem;
+}
+
+.create-title-icon-right {
+  color: $main;
+  font-size: 2rem;
 }
 
 .card-title-input {
@@ -25,21 +40,21 @@
     font-size: 1.5rem;
     display: flex;
     flex-direction: column;
-    padding-bottom: 1rem;
+    padding-bottom: 1.5rem;
 
     p {
       color: $main;
       font-weight: 500;
-      padding-bottom: 0.75rem;
+      padding-bottom: 1rem;
     }
 
     input {
-      color: $secondary;
+      color: $main;
       font-size: 1.25rem;
       border: none;
       background: $background-color;
       border-radius: 5px;
-      padding: 0.25rem 0.5rem;
+      padding: 0.5rem 0.75rem;
 
       &:focus {
         box-shadow: 0 0 10px #719ece;
@@ -49,23 +64,8 @@
   }
 }
 
-.input-container-bttns {
-  @extend %flex-between;
-
-  button {
-    @extend %button;
-    width: 60%;
-  }
-  .input-container-bttn-left {
-    @include button($secondary);
-  }
-  .input-container-bttn-right {
-    @include button($main);
-  }
-}
-
 .card-title-display {
-  background: linear-gradient(to bottom right, $main -50%, $secondary 100%);
+  background: $secondary;
   border-radius: 5px;
   box-shadow: $box-shadow;
   color: $white;

@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import CardContainerLeft from "./Components/Card-container-left"
 import CardContainerRight from "./Components/Card-container-right/Card-container-right"
 import "./CreateCards.scss"
+import { Link } from "react-router-dom"
+import { FaChevronCircleLeft, FaCheckCircle } from "react-icons/fa"
 
 interface cardData {
   question: string
@@ -40,7 +42,7 @@ const CreateCards = () => {
         return card !== cards[cardNumber - 1]
       })
     )
-    changeCard("left")
+    cardNumber === 1 ? changeCard("right") : changeCard("left")
   }
 
   // Deletes a saved card - triggered by delete button
@@ -86,24 +88,40 @@ const CreateCards = () => {
   }
 
   return (
-    <div className="card-add-container">
-      <CardContainerLeft
-        cards={cards}
-        inputData={cards[cardNumber - 1] ? prevData : inputData}
-        changeInputData={
-          cards[cardNumber - 1] ? changePrevCard : changeInputData
-        }
-        deleteCard={deleteCard}
-        refreshCard={refreshCard}
-        addCard={addCard}
-        cardNumber={cardNumber}
-        updateCard={updateCard}
-      />
-      <CardContainerRight
-        inputData={cards[cardNumber - 1] ? prevData : inputData}
-        cardNumber={cardNumber}
-        changeCard={changeCard}
-      />
+    <div className="card-add-main-container">
+      <Link to="/add/" style={{ textDecoration: "none", color: "white" }}>
+        <FaChevronCircleLeft className="create-title-icon-left" />
+      </Link>
+      <div className="card-add-container">
+        <CardContainerLeft
+          cards={cards}
+          inputData={cards[cardNumber - 1] ? prevData : inputData}
+          changeInputData={
+            cards[cardNumber - 1] ? changePrevCard : changeInputData
+          }
+          deleteCard={deleteCard}
+          refreshCard={refreshCard}
+          addCard={addCard}
+          cardNumber={cardNumber}
+          updateCard={updateCard}
+        />
+        <CardContainerRight
+          inputData={cards[cardNumber - 1] ? prevData : inputData}
+          cardNumber={cardNumber}
+          changeCard={changeCard}
+        />
+      </div>
+      <Link
+        to="/"
+        style={{
+          textDecoration: "none",
+          color: "white",
+          display: "flex",
+          justifyContent: "flex-end",
+        }}
+      >
+        <FaCheckCircle className="create-title-icon-right" />
+      </Link>
     </div>
   )
 }
@@ -111,13 +129,7 @@ const CreateCards = () => {
 export default CreateCards
 
 /*
-       input has to have something 
-        2) Change UI
-            - maybe no buttons on title 
-                - space them out more 
-            - cancel(goes to home) button and right (goes to add cards) button on title container
-            - left (goes to title) button and check (adds cards to home and goes home) button on addCards container
-            
+       
         3) Connect the cards to the home container 
         4) Make everything responsive 
 */

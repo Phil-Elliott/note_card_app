@@ -22,3 +22,17 @@ const Content = () => {
 }
 
 export default Content
+
+/*
+  create cards state 
+    collects all decks of cards that can be used or edited 
+    have a function that you pass through to get everything once the check button is pushed 
+      passes the title array and the cards array and somehow puts them togehter into one object of this new state 
+
+      title info
+      cards info (can you put an array into an object - pretty sure you can)
+
+      add redux to the app 
+      learn unit testing and try on here 
+
+*/

@@ -1,5 +1,11 @@
 @import "./../../../../Shared.scss";
 
+.card-add-main-container {
+  display: flex;
+  align-items: center;
+  width: 75%;
+}
+
 .card-add-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -7,7 +13,7 @@
   margin: 0 auto;
   min-height: 60vh;
   height: 100%;
-  width: 68%;
+  width: 86%;
 
   .add-card-left {
     background: white;
@@ -35,7 +41,7 @@
     }
 
     textarea {
-      color: $secondary;
+      color: $main;
       font-size: 1rem;
       border: none;
       background: $background-color;
@@ -118,11 +124,11 @@
       }
     }
     .add-card-right-front {
-      background: linear-gradient(to bottom right, $main -50%, $secondary 100%);
+      background: $secondary;
       color: white;
     }
     .add-card-right-back {
-      background-color: white;
+      background-color: $white;
       color: black;
       transform: rotateY(180deg);
     }

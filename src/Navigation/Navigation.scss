@@ -1,7 +1,7 @@
 @import "./../Shared.scss";
 
 .navigation {
-  background: linear-gradient($main 0%, $secondary 100%);
+  background: $main;
   box-shadow: $box-shadow;
   color: white;
   position: fixed;
@@ -44,11 +44,7 @@
   padding-block: 1rem;
 
   h1 {
-    background: linear-gradient(
-      to bottom right,
-      rgb(255, 61, 99) 30%,
-      rgb(248, 139, 75) 100%
-    );
+    background: $secondary;
     border-radius: 4px;
     font-size: clamp(1.75rem, 1.75vw, 1.75vw);
     padding: 0.25rem 0.5rem;
