@@ -9,7 +9,7 @@ interface titleData {
   difficulty: string
 }
 
-const CreateTitle = () => {
+const CreateTitle = ({ addTitleData }: { addTitleData: any }) => {
   const [inputData, setInputData] = useState<Partial<titleData>>({})
 
   return (
@@ -70,32 +70,13 @@ const CreateTitle = () => {
           justifyContent: "flex-end",
         }}
       >
-        <FaChevronCircleRight className="create-title-icon-right" />
+        <FaChevronCircleRight
+          className="create-title-icon-right"
+          onClick={() => addTitleData(inputData)}
+        />
       </Link>
     </div>
   )
 }
 
 export default CreateTitle
-
-/*
-  Style the card 
-  Have data go back to add 
-  Create add cards
-  Add Redux 
-
-
-  1) Make cancel link to home 
-  2) Create next section 
-  3) Have title carry over to next section (make everything go to the add section)
-  4) Create the add card section
-
-
-
-  4) When finished (have a new deck go to the home section)
-      - only display the title card 
-  
-
-
-
-*/

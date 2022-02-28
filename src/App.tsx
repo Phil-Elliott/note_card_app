@@ -19,6 +19,13 @@ function App() {
 
 export default App
 
-// Make form on left and display the card on the right
-// Could add hover flip from old portfolio
-// Can easily add all options within form (title, add card, refresh card, finish at the bottom)
+/*
+    1) Make add section responsive 
+    2) Make navbar responsive 
+    3) Make design for home section 
+    
+    maybe just finish everything first and then fix design and make it responsive
+
+
+
+*/

@@ -55,11 +55,7 @@ const Navigation = () => {
   return (
     <header
       className="navigation"
-      style={
-        expand
-          ? { width: "clamp(11rem, 12%, 12%)" }
-          : { width: "clamp(4rem, 4%, 4%)" }
-      }
+      style={expand ? { width: "clamp(11rem)" } : { width: "clamp(4rem)" }}
     >
       <div className="nav-main">
         <div className={expand ? "main-logo expand-container" : "main-logo"}>

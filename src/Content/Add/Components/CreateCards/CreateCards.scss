@@ -3,7 +3,7 @@
 .card-add-main-container {
   display: flex;
   align-items: center;
-  width: 75%;
+  width: 80%;
 }
 
 .card-add-container {
@@ -13,7 +13,8 @@
   margin: 0 auto;
   min-height: 60vh;
   height: 100%;
-  width: 86%;
+  width: 80%;
+  max-width: 75rem;
 
   .add-card-left {
     background: white;

@@ -1,19 +1,19 @@
 @import "./../../../../Shared.scss";
 
 .card-title-main-container {
-  display: flex;
-  align-items: center;
-  width: 70%;
+  @extend %flex-align;
+  width: 80%;
 }
 
 .card-title-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20%;
+  gap: 10%;
   margin: 0 auto;
   min-height: 60vh;
   height: 100%;
   width: 80%;
+  max-width: 60rem;
 }
 
 .create-title-icon-left {
@@ -30,7 +30,6 @@
   background: white;
   border-radius: 5px;
   box-shadow: $box-shadow;
-  @extend %flex-between;
   flex-direction: column;
   padding: 2rem 1rem;
 }
@@ -75,9 +74,9 @@
     background-color: white;
     color: $main;
     margin-block: 5rem 3rem;
-    padding-block: 0.5rem;
+    height: 3.5rem;
     width: 100%;
-    text-align: center;
+    @extend %flex-center;
   }
   h2 {
     font-size: 2rem;

@@ -1,38 +1,37 @@
-import React from "react"
+import React, { useState } from "react"
 import "./Add.scss"
 import CreateTitle from "./Components/CreateTitle/CreateTitle"
 import CreateCards from "./Components/CreateCards/CreateCards"
 import { Route, Routes } from "react-router-dom"
 
-const Add = () => {
+interface titleData {
+  title: string
+  subject: string
+  difficulty: string
+}
+
+const Add = ({ addNewData }: { addNewData: any }) => {
+  const [titleData, setTitleData] = useState<Partial<titleData>>({})
+
+  const addTitleData = (data: any) => {
+    setTitleData(data)
+  }
+
+  const addNewDeck = (cardsData: any) => {
+    addNewData(titleData, cardsData)
+  }
+
   return (
     <div className="add">
       <Routes>
-        <Route path="/" element={<CreateTitle />} />
-        <Route path="/cards" element={<CreateCards />} />
+        <Route path="/" element={<CreateTitle addTitleData={addTitleData} />} />
+        <Route
+          path="/cards"
+          element={<CreateCards addNewDeck={addNewDeck} />}
+        />
       </Routes>
     </div>
   )
 }
 
 export default Add
-
-/*
-  Title (input) subject and dificulty 
-  Then screen changes ( title on top and buttons appear)
-  Add, Edit, delete, finish Buttons 
-  Left side for new cards 
-  Right side for finished cards 
-
-
-
-
-
-  2) Have blank card ready (focus in on input)
-  3) Can put card number on top 
-  4) done cards move to right
-
-
-
-
-*/

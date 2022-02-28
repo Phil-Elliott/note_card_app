@@ -10,7 +10,7 @@ interface cardData {
   answer: string
 }
 
-const CreateCards = () => {
+const CreateCards = ({ addNewDeck }: { addNewDeck: any }) => {
   const [cardNumber, setCardNumber] = useState<number>(1)
   const [inputData, setInputData] = useState<cardData>({
     question: "",
@@ -120,16 +120,13 @@ const CreateCards = () => {
           justifyContent: "flex-end",
         }}
       >
-        <FaCheckCircle className="create-title-icon-right" />
+        <FaCheckCircle
+          className="create-title-icon-right"
+          onClick={() => addNewDeck(cards)}
+        />
       </Link>
     </div>
   )
 }
 
 export default CreateCards
-
-/*
-       
-        3) Connect the cards to the home container 
-        4) Make everything responsive 
-*/
