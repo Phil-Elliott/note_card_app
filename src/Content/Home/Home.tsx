@@ -3,8 +3,16 @@ import "./Home.scss"
 
 const Home = ({ allCards }: { allCards: any }) => {
   return (
-    <div>
-      <h1>{allCards[0] ? allCards[0][0].title : "No Cards"}</h1>
+    <div className="home-container">
+      {allCards.map((card: any) => {
+        return (
+          <div className="deck-title-display">
+            <h1>{card[0].title}</h1>
+            <h2>{card[0].subject}</h2>
+            <h3>{card[0].difficulty}</h3>
+          </div>
+        )
+      })}
     </div>
   )
 }

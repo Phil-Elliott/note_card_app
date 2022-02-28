@@ -1,2 +1,41 @@
+@import "./../../Shared.scss";
+
 .home-container {
+  width: 90%;
+  padding-block: 3%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10%;
+}
+
+.deck-title-display {
+  background: $secondary;
+  border-radius: 5px;
+  box-shadow: $box-shadow;
+  color: $white;
+  @extend %flex-column;
+  min-height: 35vh;
+  cursor: pointer;
+
+  h1 {
+    background-color: white;
+    color: $main;
+    font-size: 1.75rem;
+    margin-block: 3rem 2.5rem;
+    height: 3rem;
+    width: 100%;
+    @extend %flex-center;
+  }
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    width: 80%;
+  }
+  h3 {
+    font-size: 1.25rem;
+    text-align: center;
+    width: 80%;
+  }
 }
