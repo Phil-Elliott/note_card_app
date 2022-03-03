@@ -1,6 +1,10 @@
 @import "./../../Shared.scss";
 
 .home-container {
+  width: 100%;
+}
+
+.home-main-display-container {
   width: 90%;
   padding-block: 3%;
   margin: 0 auto;

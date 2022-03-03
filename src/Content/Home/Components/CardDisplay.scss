@@ -1,0 +1,14 @@
+@import "./../../../Shared.scss";
+
+.card-display-main-container {
+  @extend %flex-align;
+  justify-content: center;
+}
+
+.card-display-container {
+  @extend %flex-align;
+  justify-content: center;
+  width: 30vw;
+  height: 60vh;
+  margin-top: 20vh;
+}
